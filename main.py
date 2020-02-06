@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request,make_response
+import imgApi
 import processImage
 import os
 import io
+
 
 
 app = Flask(__name__)
@@ -24,7 +26,10 @@ def identifyfaces():
     array = []
     link = request.json.get('link')
     response = pi.setFaces(link)
-    return jsonify({'base64': '%s'%response})
+    im = imgApi.imgApi('b75fd7f114f5f5e','2be8f5d1754bcc269c6df45d2f447bcc8c8e5cf9') 
+    client= im.authImgur()
+    img = im.uploadImg(response,client)
+    return jsonify({'img': '%s'%img})
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))

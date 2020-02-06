@@ -32,7 +32,6 @@ class processImage:
         #cv2.waitKey(0)
         #cv2.destroyAllWindows()
         img = img.tobytes('C')
-        print(img)
         img = base64.b64encode(img)
         print(img)
         return img

@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "f1fa7818-2462-4114-a956-09b7024ac969",
+		"name": "APIOpenCV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "identifyFaces",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"link\":\"https://eneagrama.com.br/wp-content/uploads/2018/02/as-pessoas-sao-diferentes-umas-das-outras-800x419.jpg\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000//identifyFaces",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"",
+						"identifyFaces"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

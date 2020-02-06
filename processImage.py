@@ -2,7 +2,7 @@ import cv2
 import requests           
 import numpy as np
 import base64
-
+from PIL import Image
 
 class processImage:
     def __init__(self,cascade_path):
@@ -28,13 +28,9 @@ class processImage:
         for (x, y, w, h) in faces:
             img = cv2.rectangle(img, (x, y), (x+w,y+h),(255,255,0), 2) # Desenha um retângulo
           
-        #cv2.imshow('image',img)
-        #cv2.waitKey(0)
-        #cv2.destroyAllWindows()
-        img = img.tobytes('C')
-        img = base64.b64encode(img)
-        print(img)
-        return img
+        im = Image.fromarray(img)
+        im.save("myimg.jpeg")
+        return 'myimg.jpeg'
 
 pass   
     
